@@ -152,9 +152,16 @@ const Footer = () => {
                   <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 rotate-45 bg-gray-800 border-r border-b border-gray-700"></div>
                 </div>
               </a>
-              <a className="group relative hover:text-white transition-colors duration-300">
+              <a
+                className="group relative hover:text-white transition-colors duration-300"
+                tabIndex={0}
+              >
                 <span className="relative z-10">Terms of Service</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -inset-2"></div>
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-56 bg-gray-800 border border-gray-700 text-gray-200 text-xs leading-relaxed rounded-xl shadow-lg px-3 py-2 text-center opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-20">
+                  Please review our terms and conditions for using this platform.
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 rotate-45 bg-gray-800 border-r border-b border-gray-700"></div>
+                </div>
               </a>
               <a
                 className="group relative hover:text-white transition-colors duration-300"
