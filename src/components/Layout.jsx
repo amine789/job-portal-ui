@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import MatrixRain from './MatrixRain'
+import CareerTrainingAnnouncement from './CareerTrainingAnnouncement'
 
 const Layout = () => {
   return (
@@ -15,6 +16,7 @@ const Layout = () => {
         </main>
         <Footer />
       </div>
+      <CareerTrainingAnnouncement />
     </div>
   )
 }
