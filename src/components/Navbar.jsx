@@ -22,16 +22,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 shadow-2xl shadow-primary-500/10 dark:shadow-primary-400/10 border-b border-gray-200/20 dark:border-gray-700/20 transition-all duration-300">
+    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-gray-950/90 shadow-2xl shadow-primary-500/10 dark:shadow-primary-500/20 border-b border-gray-200/20 dark:border-primary-500/20 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link to="/" className="block">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-purple-600 blur-lg opacity-20 rounded-lg"></div>
-                  <h1 className="relative text-3xl font-black bg-gradient-to-r from-primary-600 via-purple-600 to-primary-800 bg-clip-text text-transparent">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-cyan-600 blur-lg opacity-30 rounded-lg"></div>
+                  <h1 className="relative text-2xl sm:text-3xl font-black tracking-tight text-primary-400 dark:text-primary-400 text-glow">
+                    <span className="text-primary-600 dark:text-primary-600">&lt;</span>
                     JobPortal
+                    <span className="text-primary-600 dark:text-primary-600">/&gt;</span>
                   </h1>
                 </div>
               </Link>
@@ -40,7 +42,7 @@ const Navbar = () => {
               <div className="ml-12 flex items-center space-x-1">
                 <Link
                   to="/jobs"
-                  className={`relative group px-4 py-3 text-sm font-semibold transition-all duration-300 ${
+                  className={`relative group px-4 py-3 text-sm font-semibold uppercase tracking-widest transition-all duration-300 ${
                     isActive("/jobs")
                       ? "text-primary-600 dark:text-primary-400"
                       : "text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400"
@@ -57,7 +59,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="/companies"
-                  className={`relative group px-4 py-3 text-sm font-semibold transition-all duration-300 ${
+                  className={`relative group px-4 py-3 text-sm font-semibold uppercase tracking-widest transition-all duration-300 ${
                     isActive("/companies")
                       ? "text-primary-600 dark:text-primary-400"
                       : "text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"

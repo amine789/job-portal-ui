@@ -15,9 +15,9 @@ export const ThemeProvider = ({ children }) => {
   const [isInitialized, setIsInitialized] = useState(false)
 
   useEffect(() => {
-    // Initialize theme from localStorage or default to light
+    // Initialize theme from localStorage or default to dark (matrix theme)
     const saved = localStorage.getItem('job-portal-theme')
-    const initialTheme = saved === 'dark' ? 'dark' : 'light'
+    const initialTheme = saved === 'light' ? 'light' : 'dark'
     console.log('Initializing theme:', initialTheme)
     setTheme(initialTheme)
     setIsInitialized(true)

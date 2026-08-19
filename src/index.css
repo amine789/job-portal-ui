@@ -1,21 +1,74 @@
 @import "tailwindcss";
 
 @theme {
-  --font-family-sans: Comfortaa, Nunito, system-ui, sans-serif;
-  --font-family-heading: Comfortaa, system-ui, sans-serif;
+  --font-family-sans: "Share Tech Mono", "JetBrains Mono", ui-monospace, monospace;
+  --font-family-heading: Orbitron, "Share Tech Mono", ui-monospace, monospace;
   --default-transition-duration: 300ms;
-  
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a8a;
-  --color-primary-950: #172554;
+
+  /* Matrix neon green — primary brand color */
+  --color-primary-50: #ecfff3;
+  --color-primary-100: #c6ffdf;
+  --color-primary-200: #8dffc0;
+  --color-primary-300: #4dff9e;
+  --color-primary-400: #1aff7a;
+  --color-primary-500: #00ff41;
+  --color-primary-600: #00d635;
+  --color-primary-700: #00a82a;
+  --color-primary-800: #007a1f;
+  --color-primary-900: #005714;
+  --color-primary-950: #002b0a;
+
+  /* Neon violet/magenta — secondary accent used across gradients */
+  --color-purple-50: #fdf0ff;
+  --color-purple-100: #fad6ff;
+  --color-purple-200: #f3adff;
+  --color-purple-300: #ea7dff;
+  --color-purple-400: #dd4dff;
+  --color-purple-500: #c81eff;
+  --color-purple-600: #a600e0;
+  --color-purple-700: #8500b3;
+  --color-purple-800: #650087;
+  --color-purple-900: #47005f;
+  --color-purple-950: #2b0039;
+
+  /* Electric cyan — tertiary accent */
+  --color-cyan-50: #ecffff;
+  --color-cyan-100: #c8feff;
+  --color-cyan-200: #91fdff;
+  --color-cyan-300: #4ff8ff;
+  --color-cyan-400: #22f0ff;
+  --color-cyan-500: #00d4e8;
+  --color-cyan-600: #00a8ba;
+  --color-cyan-700: #00818f;
+  --color-cyan-800: #006068;
+  --color-cyan-900: #003d42;
+  --color-cyan-950: #002327;
+
+  /* Electric blue — aligned with the cyan/green duo */
+  --color-blue-50: #eef9ff;
+  --color-blue-100: #d6f1ff;
+  --color-blue-200: #ade3ff;
+  --color-blue-300: #7ad0ff;
+  --color-blue-400: #3ab6ff;
+  --color-blue-500: #0099ff;
+  --color-blue-600: #0077cc;
+  --color-blue-700: #005c9e;
+  --color-blue-800: #004372;
+  --color-blue-900: #002d4d;
+  --color-blue-950: #001a2e;
+
+  /* Green-black monochrome scale — replaces neutral grays everywhere */
+  --color-gray-50: #eef5f0;
+  --color-gray-100: #d7e6db;
+  --color-gray-200: #b0cdb8;
+  --color-gray-300: #86ac90;
+  --color-gray-400: #5c8267;
+  --color-gray-500: #3d5c46;
+  --color-gray-600: #2a4230;
+  --color-gray-700: #1a2b1f;
+  --color-gray-800: #0f1a12;
+  --color-gray-900: #070d09;
+  --color-gray-950: #030603;
 }
 
 @variant dark (.dark &);
@@ -83,13 +136,36 @@
   }
 }
 
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0.6;
+  }
+  94% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0.8;
+  }
+  97% {
+    opacity: 1;
+  }
+}
+
 body {
   font-family: var(--font-family-sans);
   font-feature-settings: "rlig" 1, "calt" 1;
   scroll-behavior: smooth;
+  background-color: var(--color-gray-950);
+  color: var(--color-gray-100);
 }
 
-/* Apply playful font to headings and important elements */
+/* Apply the futuristic display font to headings and brand elements */
 h1, h2, h3, h4, h5, h6,
 .font-heading,
 button,
@@ -99,22 +175,46 @@ nav a,
 .brand {
   font-family: var(--font-family-heading);
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-/* Make buttons and interactive elements more playful */
+/* Make buttons and interactive elements feel like HUD controls */
 button, .btn, input[type="submit"] {
-  border-radius: 12px;
+  border-radius: 8px;
   transition: all var(--default-transition-duration) ease;
 }
 
 button:hover, .btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 18px rgba(0, 255, 65, 0.35), 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Smooth scrolling for all elements */
 * {
   scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(0, 255, 65, 0.35);
+  color: #eef5f0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-950);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-800);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-600);
 }
 
 /* Add gradient text shimmer effect */
@@ -152,4 +252,31 @@ button:hover, .btn:hover {
 
 .animate-scaleIn {
   animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Neon text glow for headings / brand marks */
+.text-glow {
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.65), 0 0 24px rgba(0, 255, 65, 0.35);
+}
+
+.text-glow-flicker {
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.65), 0 0 24px rgba(0, 255, 65, 0.35);
+  animation: flicker 6s linear infinite;
+}
+
+/* CRT scanline overlay */
+.crt-scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 65, 0.035) 0px,
+    rgba(0, 255, 65, 0.035) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-glow-flicker {
+    animation: none;
+  }
 }
