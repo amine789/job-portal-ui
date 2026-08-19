@@ -13,9 +13,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-2">
             <div className="relative mb-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-purple-600 blur-lg opacity-20 rounded-lg"></div>
-              <h3 className="relative text-4xl font-black bg-gradient-to-r from-primary-400 via-purple-400 to-primary-600 bg-clip-text text-transparent">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-cyan-600 blur-lg opacity-30 rounded-lg"></div>
+              <h3 className="relative text-3xl sm:text-4xl font-black tracking-tight text-primary-400 text-glow">
+                <span className="text-primary-700">&lt;</span>
                 JobPortal
+                <span className="text-primary-700">/&gt;</span>
               </h3>
             </div>
             <p className="text-gray-300 mb-8 max-w-md text-lg leading-relaxed">
