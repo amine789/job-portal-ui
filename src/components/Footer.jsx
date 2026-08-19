@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import NewsletterSubscribe from "./NewsletterSubscribe";
 
 const Footer = () => {
   return (
@@ -136,7 +137,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="relative border-t border-gray-700/50 mt-16 pt-8">
+        <div className="relative border-t border-gray-700/50 mt-16 pt-12">
+          <NewsletterSubscribe />
+        </div>
+
+        <div className="relative border-t border-gray-700/50 mt-12 pt-8">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-700/20 to-transparent h-px top-0"></div>
 
           <div className="flex flex-col md:flex-row justify-between items-center">
